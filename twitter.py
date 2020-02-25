@@ -37,7 +37,6 @@ def get_dict_of_loc(acct):
 
         js = json.loads(data)
 
-        headers = dict(connection.getheaders())
         print('Remaining', headers['x-rate-limit-remaining'])
         data = dict()
         for user in js['users']:
@@ -57,7 +56,8 @@ def get_dict_of_loc(acct):
 def create_map_layer(data):
     '''
     dict -> folium object
-    returns new layer of the map where markers are locations of some twitter account's friends
+    returns new layer of the map where markers are locations
+    of some twitter account's friends
     '''
     friends = folium.FeatureGroup(name='Friends')
 
