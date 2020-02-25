@@ -30,7 +30,7 @@ def get_dict_of_loc(acct):
         if (len(acct) < 1):
             break
         url = twurl.augment(TWITTER_URL,
-                            {'screen_name': acct, 'count': '5'})
+                            {'screen_name': acct, 'count': '10'})
         print('Retrieving', url)
         connection = urllib.request.urlopen(url, context=ctx)
         data = connection.read().decode()
